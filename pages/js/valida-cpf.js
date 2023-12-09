@@ -6,17 +6,14 @@ if (validaNumeroRepetidos(cpf)|| validaPrimeiroDigito(cpf) || validaSegundoDigit
 
 }
 
+
 else{
-
-    console.log("Existe!");
-
+    console.log("Este CPF existe!");
 }
 //validaNumeroRepetidos(cpf);
 //validaPrimeiroDigito(cpf);
 //console.log(validaNumeroRepetidos(cpf));
-
 }
-
 function validaNumeroRepetidos(cpf){
     const numeroRepetidos=[
         "000000000000",
@@ -34,12 +31,9 @@ function validaNumeroRepetidos(cpf){
     //chega se tem numeros repistodos
     return numeroRepetidos.includes(cpf)
     }
-
-
-
     function validaPrimeiroDigito(cpf) {
      let soma=0;
-     let multiplicador=0;
+     let multiplicador=10;
      for (let tamanho = 0; tamanho < 9; tamanho++) {
          soma += cpf[tamanho] * multiplicador;
         multiplicador--;
@@ -47,12 +41,11 @@ function validaNumeroRepetidos(cpf){
      }   
      soma=(soma *10)%11;
      if (soma ==10 || soma==11) {
-        soma=0
+        soma=0;
      }
 
-     return soma != cpf[9]
+     return soma != cpf[9];
     }
-
 
     function validaSegundoDigito(cpf) {
         let soma=0;
@@ -64,8 +57,7 @@ function validaNumeroRepetidos(cpf){
         }   
         soma=(soma *10)%11;
         if (soma ==10 || soma==11) {
-           soma=0
+           soma=0;
         }
-   
-        return soma != cpf[10]
+           return soma != cpf[10];
        }

@@ -1,8 +1,9 @@
 //valida-idade
 
-export default function ehMaiordeIdade(campo) {
+export default function ehMaiorDeIdade(campo) {
     const dataNascimento= new Date(campo.value);
- validaIIdade(dataNascimento);
+    console.log(validaIdade(dataNascimento));
+
 
 }
 
@@ -15,3 +16,6 @@ return dataAtual >=dataMais18
 
     
 }
+
+
+

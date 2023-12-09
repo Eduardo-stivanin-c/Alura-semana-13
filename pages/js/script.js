@@ -1,8 +1,8 @@
 ///validar campos obrigatórios
-
+//"use  "
 
 import ehUmCPF from "./valida-cpf.js";
-import ehMaiordeIdade from "./valida-idade.js";
+import ehMaiorDeIdade from "./valida-idade.js";
 const camposDoFormulario=document.querySelectorAll(["required"])
 
 camposDoFormulario.forEach((campo)=>{
@@ -13,12 +13,14 @@ camposDoFormulario.forEach((campo)=>{
 function verificaCampo(campo) {
     if (campo.name == "cpf" && campo.value.length >= 11) {
 
-         ehUmCPF(campo)
+         ehUmCPF(campo);
 
     }
-    if (campo.name=="aniversario" && campo.value >=18 ) {
-        ehMaiordeIdade(campo)
+    if (campo.name=="aniversario" && campo.value !="" ) {
+        ehMaiorDeIdade(campo);
 
     }
+    console.log(campo.validity);
+
 }
 
