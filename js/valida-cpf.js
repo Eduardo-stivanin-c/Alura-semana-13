@@ -2,7 +2,7 @@
 export default function ehUmCPF (campo){
 const cpf=campo.value.replace(/\.|-/g,"");
 if (validaNumeroRepetidos(cpf)|| validaPrimeiroDigito(cpf) || validaSegundoDigito(cpf)) {
-    console.log("esse CPF não existe");
+    console.log("Esse CPF não existe");
 
 }
 
@@ -10,6 +10,7 @@ if (validaNumeroRepetidos(cpf)|| validaPrimeiroDigito(cpf) || validaSegundoDigit
 else{
     console.log("Este CPF existe!");
 }
+
 //validaNumeroRepetidos(cpf);
 //validaPrimeiroDigito(cpf);
 //console.log(validaNumeroRepetidos(cpf));
