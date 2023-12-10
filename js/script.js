@@ -86,6 +86,6 @@ if (campo.validity[erro]) {
  }
 
  //deu na teia corrigir bug faço oue é possivel
- //console.log(verificaCampo(cpf))
+ console.log(verificaCampo(cpf))
 
 //*"Por favor, preencha um nome válido."
