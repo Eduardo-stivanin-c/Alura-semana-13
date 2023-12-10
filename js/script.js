@@ -63,6 +63,8 @@ const mensagens = {
     }
 }
 
+
+
 function verificaCampo(campo) {
     let mensagens="";
     if (campo.name == "cpf" && campo.value.length >= 11) {
@@ -77,9 +79,13 @@ if (campo.validity[erro]) {
 
 }
  }
- 
+
  )
 
+ return campo.value
  }
+
+ //deu na teia corrigir bug faço oue é possivel
+ //console.log(verificaCampo(cpf))
 
 //*"Por favor, preencha um nome válido."
