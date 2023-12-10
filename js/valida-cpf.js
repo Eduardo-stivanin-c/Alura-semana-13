@@ -1,6 +1,9 @@
 //"use strick"
 export default function ehUmCPF (campo){
 const cpf=campo.value.replace(/\.|-/g,"");
+
+//se validaNumeroRepetidos=verdadeiro E validaPrimeiroDigito=verdadeiro E validaSegundoDigito=verdadeiro
+
 if (validaNumeroRepetidos(cpf)|| validaPrimeiroDigito(cpf) || validaSegundoDigito(cpf)) {
     console.log("Esse CPF não existe");
 
