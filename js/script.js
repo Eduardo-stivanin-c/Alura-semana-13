@@ -1,14 +1,11 @@
 ///validar campos obrigatórios
-"use  strick";
-
+//"use  strick";
 import ehUmCPF from "./valida-cpf.js";
 import ehMaiorDeIdade from "./valida-idade.js";
 const camposDoFormulario=document.querySelectorAll("[required]")
 const formulario=document.querySelector("[data-formulario]");
-
 formulario.addEventListener("submit", (e) => {
     e.preventDefault();
-
     const listaRespostas = {
         "nome": e.target.elements["nome"].value,
         "email": e.target.elements["email"].value,
@@ -22,14 +19,11 @@ formulario.addEventListener("submit", (e) => {
 
 })
 
-
-
 camposDoFormulario.forEach((campo)=>{
     campo.addEventListener("blur",()=>verificaCampo(campo));
     campo.addEventListener("invalid",evento => evento.preventDefault())
 
 })
-
 const tiposDeErro=[
     
     "valueMissing",
@@ -73,11 +67,8 @@ const mensagens = {
         valueMissing: 'Você deve aceitar nossos termos antes de continuar.',
     }
 }
-
-
-
 function verificaCampo(campo) {
-    let mensagens=""
+    let mensagem=""
     campo.setCustomValidity('');
     if (campo.name == "cpf" && campo.value.length >= 11) {
         ehUmCPF(campo);
@@ -85,24 +76,21 @@ function verificaCampo(campo) {
     if (campo.name == "aniversario" && campo.value != "") {
         ehMaiorDeIdade(campo);
     }
-
  tiposDeErro.forEach(erro =>{
 if (campo.validity[erro]) {
     mensagem=mensagens[campo.name][erro];
 console.log(mensagens);
 }
 });
-
-const mensagemErro=campo.parentNode.querySelector('.mesagem-erro');
+const mensagemErro=campo.parentNode.querySelector('.mensagem-erro');
 const validadorDeInput=campo.checkValidity();
 
-
 if (!validadorDeInput) {
-    mensagemErro.textContexto=mensagem;
+    mensagemErro.textContext=mensagem;
 
 } 
 else{
-    mensagemErro.textContexto="";
+   mensagemErro.textContext="";
 }
 };
 
@@ -110,6 +98,6 @@ else{
  
 
  //deu na teia corrigir bug faço oue é possivel
- console.log(verificaCampo(cpf))
+ //console.log(verificaCampo(cpf))
 
 //*"Por favor, preencha um nome válido."
