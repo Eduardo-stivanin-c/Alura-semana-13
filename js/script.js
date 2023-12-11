@@ -1,27 +1,32 @@
 ///validar campos obrigatórios
 "use  strick";
+
 import ehUmCPF from "./valida-cpf.js";
 import ehMaiorDeIdade from "./valida-idade.js";
 const camposDoFormulario=document.querySelectorAll("[required]")
 const formulario=document.querySelector("[data-formulario]");
-formulario.addEventListener("submit",(e)=>{
+
+formulario.addEventListener("submit", (e) => {
     e.preventDefault();
-    const listaResposta={
-        
-        "nome":e.target.elements["nome"].value,
-        
-        "email":e.target.elements["email"].value,
-        
-        "rg":e.target.elements["rg"].value,
-        "cpf":e.target.elements["cpf"].value,
-        "aniversario":e.target.elements["aniversario"].value,
+
+    const listaRespostas = {
+        "nome": e.target.elements["nome"].value,
+        "email": e.target.elements["email"].value,
+        "rg": e.target.elements["rg"].value,
+        "cpf": e.target.elements["cpf"].value,
+        "aniversario": e.target.elements["aniversario"].value,
     }
-    localStorage.setItem("cadastro",JSON.stringify(listaResposta));
-    window.location.href="./abrir-conta-form-2.html"
+    localStorage.setItem("cadastro", JSON.stringify(listaRespostas));
+
+    window.location.href = "./abrir-conta-form-2.html";
+
 })
+
+
+
 camposDoFormulario.forEach((campo)=>{
-    campo.addEventListener("blur",()=>verificaCampo(campo)),
-    campo.addEventListener("invalid",evento => evento.preventDefault());
+    campo.addEventListener("blur",()=>verificaCampo(campo));
+    campo.addEventListener("invalid",evento => evento.preventDefault())
 
 })
 
@@ -72,24 +77,37 @@ const mensagens = {
 
 
 function verificaCampo(campo) {
-    let mensagens="";
+    let mensagens=""
+    campo.setCustomValidity('');
     if (campo.name == "cpf" && campo.value.length >= 11) {
         ehUmCPF(campo);
     }
     if (campo.name == "aniversario" && campo.value != "") {
         ehMaiorDeIdade(campo);
     }
+
  tiposDeErro.forEach(erro =>{
 if (campo.validity[erro]) {
-    mensagem=mensagens[campo.name] [erro];
-
+    mensagem=mensagens[campo.name][erro];
+console.log(mensagens);
 }
- }
+});
 
- )
+const mensagemErro=campo.parentNode.querySelector('.mesagem-erro');
+const validadorDeInput=campo.checkValidity();
 
- return campo.value
- }
+
+if (!validadorDeInput) {
+    mensagemErro.textContexto=mensagem;
+
+} 
+else{
+    mensagemErro.textContexto="";
+}
+};
+
+ //return campo.value
+ 
 
  //deu na teia corrigir bug faço oue é possivel
  console.log(verificaCampo(cpf))
