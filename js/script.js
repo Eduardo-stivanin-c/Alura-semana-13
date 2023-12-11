@@ -84,7 +84,7 @@ console.log(mensagens);
 });
 const mensagemErro=campo.parentNode.querySelector('.mensagem-erro');
 const validadorDeInput=campo.checkValidity();
-
+/*
 if (!validadorDeInput) {
     mensagemErro.textContext=mensagem;
 
@@ -92,7 +92,8 @@ if (!validadorDeInput) {
 else{
    mensagemErro.textContext="";
 }
-};
+*/};
+
 
  //return campo.value
  
