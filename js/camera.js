@@ -10,7 +10,7 @@ const botaoTirarFoto=document.querySelector("[data-tirar-foto]")
 const canvas=document.querySelector("[data-video-canvas]");
 const mensagem=document.querySelector("[data-mensagem]");
 
-var imagemURL="";
+let imagemURL="";
 
 ///enviar foto
 const botaoEnviarFoto=document.querySelector("[data-enviar]")
@@ -50,6 +50,7 @@ botaoEnviarFoto.addEventListener("click",()=>{
     const converteRetorno=JSON.parse(receberDadosExistentes);
 
     converteRetorno.imagem=imagemURL;
+    
     localStorage.setItem("cadastro",JSON.stringify(converteRetorno));
 
     window.location.href="./abrir-conta-form-3.html"
