@@ -10,7 +10,7 @@ const botaoTirarFoto=document.querySelector("[data-tirar-foto]")
 const canvas=document.querySelector("[data-video-canvas]");
 const mensagem=document.querySelector("[data-mensagem]");
 
-let imagemURL="";
+var imagemURL="";
 
 ///enviar foto
 const botaoEnviarFoto=document.querySelector("[data-enviar]")
