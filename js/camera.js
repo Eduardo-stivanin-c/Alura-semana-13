@@ -11,6 +11,7 @@ const canvas=document.querySelector("[data-video-canvas]");
 const mensagem=document.querySelector("[data-mensagem]");
 
 
+let imagemURL="";
 
 botaoIniciarCamera.addEventListener("click",async function () {
     const iniciarVideo=await navigator.mediaDevices.getUserMedia({
@@ -36,6 +37,8 @@ botaoTirarFoto.addEventListener("click",function () {
 
     campoCamera.style.display="none";
     mensagem.style.display="block";
+
+    
 
 })
 
