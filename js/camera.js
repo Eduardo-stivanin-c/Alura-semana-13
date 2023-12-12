@@ -34,7 +34,7 @@ botaoTirarFoto.addEventListener("click",function () {
     
 
 
-    campoCamera.style.display="nome";
+    campoCamera.style.display="none";
     mensagem.style.display="block";
 
 })
