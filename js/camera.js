@@ -50,10 +50,10 @@ botaoEnviarFoto.addEventListener("click",()=>{
     const converteRetorno=JSON.parse(receberDadosExistentes);
 
     converteRetorno.imagem=imagemURL;
-    
+
     localStorage.setItem("cadastro",JSON.stringify(converteRetorno));
 
-    window.location.href="./abrir-conta-form-3.html"
+    window.location.href="./abrir-conta-form-3.html";
 
 
 })
