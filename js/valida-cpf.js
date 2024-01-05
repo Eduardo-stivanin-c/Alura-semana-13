@@ -5,20 +5,20 @@ const cpf=campo.value.replace(/\.|-/g,"");
 //se validaNumeroRepetidos=verdadeiro E validaPrimeiroDigito=verdadeiro E validaSegundoDigito=verdadeiro
 
 if (validaNumeroRepetidos(cpf)|| validaPrimeiroDigito(cpf) || validaSegundoDigito(cpf)) {
-    console.log("Esse CPF não existe");
-
+    //console.log("Esse CPF não existe");
+    campo.setCustomValidity('Esse cpf não é válido')
 }
 
-
+/*
 else{
     console.log("Este CPF existe!");
-}
+}**/
 
 //validaNumeroRepetidos(cpf);
 //validaPrimeiroDigito(cpf);
 //console.log(validaNumeroRepetidos(cpf));
 }
-function validaNumeroRepetidos(cpf){
+function validaNumerosRepetidos(cpf){
     const numeroRepetidos=[
         "000000000000",
         "111111111111",
@@ -56,7 +56,7 @@ function validaNumeroRepetidos(cpf){
         let multiplicador=11;
         for (let tamanho = 0; tamanho < 10; tamanho++) {
             soma += cpf[tamanho] * multiplicador;
-           multiplicador--;
+           multiplicador--
            
         }   
         soma=(soma *10)%11;
